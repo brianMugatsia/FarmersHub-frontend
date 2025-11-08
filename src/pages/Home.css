@@ -1,0 +1,68 @@
+.card {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  color: #198754; /* Bootstrap success green */
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #555;
+}
+.weather-box {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 8px;
+  font-size: 0.9rem;
+  transition: 0.3s ease;
+}
+
+.weather-box:hover {
+  transform: scale(1.03);
+}
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.text-shadow {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+/* Enhanced card styles only for the last two sections */
+.training-section .card,
+.farmers-feedback .card {
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.training-section .card:hover,
+.farmers-feedback .card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+  border-color: rgba(25, 135, 84, 0.3);
+}
+
+.training-section .card-title,
+.farmers-feedback .card-title {
+  color: #198754;
+  font-weight: 600;
+}
+
+.training-section .card-text,
+.farmers-feedback .card-text {
+  color: #444;
+}
+.body {
+  background-color: #e9ecef;
+}

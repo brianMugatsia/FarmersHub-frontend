@@ -1,0 +1,28 @@
+.register-container {
+  background: linear-gradient(rgba(0, 100, 0, 0.3), rgba(0, 100, 0, 0.3)),
+    url("../assets/cows.png") center/cover no-repeat;
+    animation: fadeIn 1s ease-in-out;
+     min-height: 100vh; /* Ensures full screen height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 15px; /* Adds breathing room */
+  box-sizing: border-box;
+}
+
+.spinning-icon {
+  animation: spin 6s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.card {
+  width: 100%;
+  max-width: 420px;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}

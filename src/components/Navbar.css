@@ -1,0 +1,145 @@
+.navbar {
+  overflow: visible !important;
+}
+
+.navbar .nav-link {
+  font-weight: 500;
+  transition: all 0.3s ease;
+  color: #fff !important;
+}
+
+.navbar .nav-link:hover {
+  color: #dfffd8 !important;
+}
+
+.navbar .nav-link.active {
+  font-weight: 700;
+  color: #ffd700 !important;
+  border-bottom: 2px solid #fff;
+}
+
+/* 🔹 Dropdown Menu Styles */
+.dropdown-menu {
+  background-color: #f8f9fa !important; /* Light background */
+  color: #212529 !important;            /* Dark text for contrast */
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  z-index: 2000 !important;
+}
+
+.dropdown-menu .dropdown-item {
+  color: #212529 !important;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: #eaf5e4 !important; /* Light green hover */
+  color: #198754 !important; /* Bootstrap success green */
+}
+/* keep your existing styles above; add these for the React dropdown */
+
+.nav-item-features {
+  margin-left: 0.5rem;
+}
+
+/* Features button look */
+.features-btn {
+  color: #fff;
+  border-color: rgba(255,255,255,0.3);
+}
+
+/* dropdown container positioned relative to the button, aligned to the right */
+.features-dropdown {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  min-width: 180px;
+  background: #f8f9fa;
+  color: #212529;
+  border-radius: 8px;
+  padding: 6px 0;
+  z-index: 3000;
+  display: flex;
+  flex-direction: column;
+}
+
+/* dropdown items */
+.features-dropdown .dropdown-item {
+  background: transparent;
+  border: none;
+  text-align: left;
+  padding: 8px 14px;
+  width: 100%;
+  color: #212529;
+  font-size: 0.95rem;
+}
+
+.features-dropdown .dropdown-item:hover {
+  background: #eaf5e4;
+  color: #198754;
+  cursor: pointer;
+}
+
+/* small screen adjustments so dropdown fits within collapse */
+@media (max-width: 991.98px) {
+  .features-dropdown {
+    position: static;
+    margin-top: 8px;
+    width: 100%;
+    border-radius: 6px;
+  }
+}
+.features-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 180px;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 2000;
+  animation: fadeIn 0.2s ease;
+}
+
+.features-dropdown .dropdown-item {
+  padding: 10px 15px;
+  color: #198754;
+  transition: background 0.2s;
+}
+
+.features-dropdown .dropdown-item:hover {
+  background: #e8f5e9;
+}
+
+.dropdown-item svg {
+  transition: transform 0.2s ease;
+}
+
+.dropdown-item:hover svg {
+  transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* 🔄 Continuous spinning animation */
+.spinning-icon {
+  animation: spin 6s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

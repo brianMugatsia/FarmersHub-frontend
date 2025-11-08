@@ -1,0 +1,54 @@
+.about-page {
+  background: linear-gradient(135deg, #f7fff7 0%, #ffffff 100%);
+  min-height: 100vh;
+}
+
+/* Card hover animation */
+.team-card {
+  transition: all 0.4s ease;
+  border-radius: 20px;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.25);
+  border: 1px solid #a5d6a7;
+}
+
+/* Name underline animation */
+.team-name {
+  position: relative;
+  display: inline-block;
+}
+
+.team-name::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  left: 0;
+  bottom: -3px;
+  background-color: #198754; /* Bootstrap success color */
+  transition: width 0.4s ease;
+}
+
+.team-card:hover .team-name::after {
+  width: 100%;
+}
+
+/* Slight zoom on image hover */
+.team-card img {
+  transition: transform 0.3s ease;
+}
+
+.team-card:hover img {
+  transform: scale(1.07);
+}
+
+/* Mobile tweaks */
+@media (max-width: 576px) {
+  .team-card img {
+    height: 120px !important;
+    width: 120px !important;
+  }
+}

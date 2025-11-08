@@ -1,0 +1,59 @@
+html,
+body {
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Make footer stick to bottom if content is short */
+.footer {
+  margin-top: auto;
+}
+/* ===== Footer Hover Effects ===== */
+
+/* Link hover (e.g., Home, Marketplace, About...) */
+.footer a {
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.footer a:hover {
+  color: #d4f3dc !important; /* lighter greenish white */
+  transform: translateX(3px);
+}
+
+/* Social media icon hover */
+.footer .d-flex a {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer .d-flex a:hover {
+  color: #c9ffd1 !important;
+  transform: scale(1.2);
+}
+
+/* Divider styling */
+.footer hr {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Subtle footer text style */
+.footer p.small {
+  color: rgba(255, 255, 255, 0.85);
+}
+/* 🔄 Continuous spinning animation */
+.spinning-icon {
+  animation: spin 6s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

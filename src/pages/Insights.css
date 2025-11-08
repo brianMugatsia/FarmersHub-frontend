@@ -1,0 +1,40 @@
+.insights-container {
+  background: linear-gradient(rgba(0,100,0,0.3), rgba(0,100,0,0.3)),
+              url("../assets/training.jpg") center/cover no-repeat;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.weather-card {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Cards outside the background use normal container */
+.card {
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+.tips-section {
+  max-width: 1200px; /* Match the weather card width or background container */
+  margin: 0 auto;
+  width: 90%; /* Responsive */
+}
+
+.tips-card {
+  border-radius: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.share-tip-card {
+  margin-bottom: 3rem; /* Space after the form */
+}
+
+.tips-cards-wrapper {
+  margin-top: 2rem; /* Extra spacing between form and tips */
+}
