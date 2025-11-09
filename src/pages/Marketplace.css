@@ -33,7 +33,7 @@ select:focus {
   border-color: #198754 !important;
   box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.25) !important;
 }
-/* 🔄 Continuous spinning animation */
+/* Continuous spinning animation */
 .spinning-icon {
   animation: spin 6s linear infinite;
 }
@@ -46,7 +46,7 @@ select:focus {
     transform: rotate(360deg);
   }
 }
-/* 🧩 Make the upload card responsive and spacious */
+/*  Make the upload card responsive and spacious */
 @media (max-width: 992px) {
   .card form .form-control,
   .card form .form-select {
@@ -69,7 +69,7 @@ select:focus {
     gap: 0.5rem;
   }
 }
-/* 🛍️ CART SECTION STYLES */
+/* CART SECTION STYLES */
 .cart-card {
   width: 90%;
   max-width: 1200px;
@@ -133,7 +133,7 @@ select:focus {
   transform: scale(1.05);
 }
 
-/* 📱 Responsiveness */
+/* Responsiveness */
 @media (max-width: 768px) {
   .cart-card {
     width: 95%;

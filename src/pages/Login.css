@@ -7,7 +7,7 @@
   border-color: #198754;
   box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.25);
 }
-* 🔄 Continuous spinning animation */
+* Continuous spinning animation */
 .spinning-icon {
   animation: spin 6s linear infinite;
 }

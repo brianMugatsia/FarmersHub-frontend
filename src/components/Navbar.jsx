@@ -10,7 +10,7 @@ export default function Navbar() {
   const buttonRef = useRef(null);
   const navigate = useNavigate();
 
-  // ✅ Close dropdown when clicking outside or pressing Escape
+  //  Close dropdown when clicking outside or pressing Escape
   useEffect(() => {
     function onDocClick(e) {
       if (
@@ -33,7 +33,7 @@ export default function Navbar() {
     };
   }, []);
 
-  // ✅ Navigate when clicking dropdown item
+  //  Navigate when clicking dropdown item
   function handleNav(path) {
     setOpen(false);
     navigate(path);
@@ -102,7 +102,7 @@ export default function Navbar() {
               </NavLink>
             </li>
 
-            {/* ✅ Features dropdown at end */}
+            {/*  Features dropdown at end */}
             <li className="nav-item nav-item-features" style={{ position: "relative" }}>
               <button
                 ref={buttonRef}
@@ -111,7 +111,7 @@ export default function Navbar() {
                 aria-expanded={open}
                 onClick={() => setOpen((v) => !v)}
               >
-                ⚙️ <span className="ms-1">Features</span>
+                 <span className="ms-1">Features</span>
               </button>
 
               {/* React-controlled dropdown */}

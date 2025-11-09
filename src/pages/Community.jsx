@@ -188,13 +188,13 @@ export default function Community() {
                 className="btn btn-outline-success btn-sm"
                 onClick={() => handleLike(p.id)}
               >
-                👍 {p.likes}
+                 {p.likes}
               </button>
               <button
                 className="btn btn-outline-primary btn-sm"
                 onClick={() => handleShare(p.id)}
               >
-                🔁 {p.shares}
+                 {p.shares}
               </button>
             </div>
             <div className="mt-3">
@@ -217,7 +217,7 @@ export default function Community() {
                 <div className="mt-2">
                   {p.comments.map((c) => (
                     <p key={c.id} className="mb-1">
-                      💬 {c.text}
+                       {c.text}
                     </p>
                   ))}
                 </div>
