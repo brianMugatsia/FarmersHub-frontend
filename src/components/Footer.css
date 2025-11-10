@@ -44,7 +44,7 @@ body {
 .footer p.small {
   color: rgba(255, 255, 255, 0.85);
 }
-/* 🔄 Continuous spinning animation */
+/*  Continuous spinning animation */
 .spinning-icon {
   animation: spin 6s linear infinite;
 }

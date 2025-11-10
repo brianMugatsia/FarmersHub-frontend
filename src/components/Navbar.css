@@ -130,7 +130,7 @@
     transform: translateY(0);
   }
 }
-/* 🔄 Continuous spinning animation */
+/* Continuous spinning animation */
 .spinning-icon {
   animation: spin 6s linear infinite;
 }

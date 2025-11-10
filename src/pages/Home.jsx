@@ -64,7 +64,7 @@ export default function Home() {
 
   return (
     <div className="body">
-      {/* ✅ HERO SECTION */}
+      {/* HERO SECTION */}
       <section className="text-white text-center rounded">
         <div
           id="heroCarousel"
@@ -169,7 +169,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ✅ 2. KEY FEATURES (Image Cards) */}
+      {/* 2. KEY FEATURES (Image Cards) */}
       <section className="container my-5 px-3 px-md-0 text-center training-section">
         <h2 className="text-center fw-bold text-success mb-4">
           Our Key Features
@@ -285,7 +285,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ✅ 3. TESTIMONIALS SECTION */}
+      {/* 3. TESTIMONIALS SECTION */}
       <section className="bg-light py-5 farmers-feedback">
         <div className="container text-center">
           <h2 className="fw-bold text-success mb-4">What Our Farmers Say</h2>

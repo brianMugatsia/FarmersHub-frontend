@@ -271,7 +271,7 @@ export default function Marketplace() {
         </form>
       </div>
 
-      {/* 🔍 Search + Filter Row */}
+      {/* Search + Filter Row */}
       <div className="row justify-content-center align-items-center mb-4">
         <div className="col-md-4 mb-2">
           <div className="input-group shadow-sm">
@@ -306,7 +306,7 @@ export default function Marketplace() {
         </div>
       </div>
 
-      {/* 🧾 Product Grid */}
+      {/*  Product Grid */}
       <div className="row">
         {filtered.map((product) => (
           <div key={product.id} className="col-md-4 mb-4">
@@ -370,7 +370,7 @@ export default function Marketplace() {
         )}
       </div>
 
-      {/* 🛍️ Floating Cart Button + Slide-Out Panel */}
+      {/*  Floating Cart Button + Slide-Out Panel */}
       {cart.length > 0 && (
         <>
           <button
