@@ -8,6 +8,9 @@ import {
   Wind,
   Lightbulb,
   RefreshCcw,
+  Info,
+  X,
+  Loader,
 } from "lucide-react";
 
 export default function Insights() {
@@ -39,6 +42,10 @@ export default function Insights() {
     author: "",
     category: "",
   });
+
+  const [selectedTip, setSelectedTip] = useState(null);
+  const [aiDetails, setAiDetails] = useState("");
+  const [aiLoading, setAiLoading] = useState(false);
 
   useEffect(() => {
     if (navigator.geolocation) {
@@ -106,9 +113,39 @@ export default function Insights() {
     setNewTip({ text: "", image: null, author: "", category: "" });
   };
 
+  const handleMoreDetails = (tip) => {
+    setSelectedTip(tip);
+    setAiLoading(true);
+    setAiDetails("");
+
+    setTimeout(() => {
+      let response = "";
+
+      if (tip.category === "Crops") {
+        response = `Crop Analysis:
+- Best watering time: early morning or evening
+- Recommended soil: well-drained loam
+- Risk factors: heat stress, wind evaporation
+- Improvement: add mulch and organic compost`;
+      } else if (tip.category === "Livestock") {
+        response = `Livestock Analysis:
+- Ensure constant clean water supply
+- Improve housing ventilation
+- Schedule regular vaccinations`;
+      } else {
+        response = `General Farm Advice:
+- Monitor weather conditions
+- Keep farm records
+- Apply sustainable practices`;
+      }
+
+      setAiDetails(response);
+      setAiLoading(false);
+    }, 1500);
+  };
+
   return (
     <>
-      {/* Weather Section */}
       <div className="insights-container py-5">
         <div className="container">
           <h2 className="text-center text-light fw-bold mb-4">
@@ -131,7 +168,10 @@ export default function Insights() {
           {loading && (
             <p className="text-center text-muted">Loading weather...</p>
           )}
-          {error && <p className="text-center text-danger">{error}</p>}
+
+          {error && (
+            <p className="text-center text-danger">{error}</p>
+          )}
 
           {weather && (
             <div className="card mx-auto shadow-sm weather-card">
@@ -157,16 +197,12 @@ export default function Insights() {
         </div>
       </div>
 
-      {/* Tips Section */}
       <div className="container py-5">
-        {/* Add Tip Form */}
-        <div
-          className="card shadow-sm p-4 mb-5 mx-auto share-tip-card"
-          style={{ width: "90%", maxWidth: "1200px" }}
-        >
+        <div className="card shadow-sm p-4 mb-5 mx-auto" style={{ maxWidth: "1200px" }}>
           <h5 className="text-success fw-bold mb-3">
             <Lightbulb className="me-2" /> Share a Farm Tip
           </h5>
+
           <form onSubmit={handleTipSubmit} className="row g-3">
             <div className="col-12">
               <textarea
@@ -184,7 +220,7 @@ export default function Insights() {
             <div className="col-md-4">
               <select
                 className="form-select"
-                value={newTip.category || ""}
+                value={newTip.category}
                 onChange={(e) =>
                   setNewTip({ ...newTip, category: e.target.value })
                 }
@@ -204,7 +240,7 @@ export default function Insights() {
                 type="text"
                 className="form-control"
                 placeholder="Your name"
-                value={newTip.author || ""}
+                value={newTip.author}
                 onChange={(e) =>
                   setNewTip({ ...newTip, author: e.target.value })
                 }
@@ -216,10 +252,10 @@ export default function Insights() {
               <input
                 type="file"
                 className="form-control"
+                accept="image/*"
                 onChange={(e) =>
                   setNewTip({ ...newTip, image: e.target.files[0] })
                 }
-                accept="image/*"
               />
             </div>
 
@@ -231,7 +267,6 @@ export default function Insights() {
           </form>
         </div>
 
-        {/* Tips Cards */}
         <div className="row">
           {tips.map((tip) => (
             <div key={tip.id} className="col-md-4 mb-4">
@@ -242,18 +277,65 @@ export default function Insights() {
                   className="card-img-top"
                   style={{ height: "180px", objectFit: "cover" }}
                 />
-                <div className="card-body">
+
+                <div className="card-body d-flex flex-column">
                   <span className="badge bg-success mb-2">
                     {tip.category}
                   </span>
-                  <p className="card-text">{tip.text}</p>
-                  <small className="text-muted">By {tip.author}</small>
+
+                  <p className="card-text flex-grow-1">{tip.text}</p>
+
+                  <div className="d-flex justify-content-between align-items-center">
+                    <small className="text-muted">By {tip.author}</small>
+                    <button
+                      className="btn btn-outline-success btn-sm"
+                      onClick={() => handleMoreDetails(tip)}
+                    >
+                      <Info size={16} className="me-1" />
+                      More Details
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      {selectedTip && (
+        <div className="modal fade show d-block" tabIndex="-1">
+          <div className="modal-dialog modal-lg modal-dialog-centered">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title text-success">
+                  AI Insights – {selectedTip.category}
+                </h5>
+                <button className="btn" onClick={() => setSelectedTip(null)}>
+                  <X />
+                </button>
+              </div>
+
+              <div className="modal-body">
+                <img
+                  src={selectedTip.image}
+                  alt="Tip"
+                  className="img-fluid rounded mb-3"
+                />
+
+                {aiLoading ? (
+                  <p className="text-muted">
+                    <Loader className="me-2" /> Analyzing data...
+                  </p>
+                ) : (
+                  <pre style={{ whiteSpace: "pre-wrap" }}>
+                    {aiDetails}
+                  </pre>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

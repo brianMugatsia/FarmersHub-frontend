@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { ChartLine, BookOpen, Users, Radius } from "lucide-react"; // ✅ icons
+import { ChartLine, BookOpen, Users, Radius } from "lucide-react"; //  icons
 import "./Navbar.css";
 import farmersicon from "../assets/farmersicon.png"
 

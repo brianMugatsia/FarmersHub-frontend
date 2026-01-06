@@ -1,6 +1,7 @@
 import React from "react";
 import founder from "../assets/founder.jpg";
-import cofounder from "../assets/cofounder.jpg";
+import pharies from "../assets/pharies.jpeg";
+import sirngeno from "../assets/sirngeno.jpeg"
 import "./About.css";
 
 export default function About() {
@@ -56,12 +57,29 @@ export default function About() {
         <div className="col-md-4 mb-4">
           <div className="team-card card border-0 shadow-sm p-3 h-100">
             <img
-              src={cofounder}
+              src={sirngeno}
               alt="Co-Founder"
               className="rounded-circle mx-auto mb-3"
               style={{ height: "150px", width: "150px", objectFit: "cover" }}
             />
-            <h5 className="team-name text-success fw-bold">Scolastica Anjao</h5>
+            <h5 className="team-name text-success fw-bold">Mr NGENO</h5>
+            <p className="text-muted">Co-Founder</p>
+            <p className="small text-muted">
+              Co-leading Farmers Hub with dedication to improving access to reliable
+              markets and fair trade for all farmers in Kenya.
+            </p>
+          </div>
+        </div>
+        {/* Co-Founder */}
+        <div className="col-md-4 mb-4">
+          <div className="team-card card border-0 shadow-sm p-3 h-100">
+            <img
+              src={pharies}
+              alt="Co-Founder"
+              className="rounded-circle mx-auto mb-3"
+              style={{ height: "150px", width: "150px", objectFit: "cover" }}
+            />
+            <h5 className="team-name text-success fw-bold">Mr PHARIES</h5>
             <p className="text-muted">Co-Founder</p>
             <p className="small text-muted">
               Co-leading Farmers Hub with dedication to improving access to reliable
